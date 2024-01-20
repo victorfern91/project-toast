@@ -7,7 +7,7 @@ import { create } from 'zustand';
 export const useToastStore = create((set) => ({
     toasts: [],
     sendNotification: (variant, message) => {
-        set((state) => ({ toasts: state.toasts.concat({ variant, message, id: Date.now() }) }))
+        set((state) => ({ toasts: state.toasts.concat({ variant, message, id: crypto.randomUUID() }) }))
     },
     removeToastByIndex: (index) => {
         set((state) => ({ toasts: state.toasts.toSpliced(index, 1) }))

@@ -56,7 +56,7 @@ function ToastPlayground() {
           <div
             className={`${styles.inputWrapper} ${styles.radioWrapper}`}
           >
-            <Button onClick={() => sendNotification('warning', 'Triggered   ->'+Date.now())}>Pop Toast!</Button>
+            <Button onClick={() => sendNotification('warning', 'Triggered   ->'+crypto.randomUUID())}>Pop Toast!</Button>
           </div>
         </div>
       </div>
