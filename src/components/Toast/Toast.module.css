@@ -1,3 +1,23 @@
+@keyframes close {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes open {
+  0% {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .toast {
   position: relative;
   display: flex;
@@ -12,6 +32,15 @@
   box-shadow: var(--shadow-elevation-medium);
 }
 
+.toast[data-state='open'] {
+  animation: open 500ms cubic-bezier(0.15, 1, 0.3, 1);
+}
+
+.toast[data-state='closed'] {
+  animation: close 150ms ease-out;
+}
+
+
 .content {
   flex: 1;
   padding: 12px 0px;
@@ -25,6 +54,16 @@
 }
 .iconContainer svg {
   display: block;
+}
+
+.viewport {
+  margin: 1rem;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .closeButton {

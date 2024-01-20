@@ -3,10 +3,14 @@ import React from 'react';
 import Button from '../Button';
 
 import styles from './ToastPlayground.module.css';
+import { useToastStore} from "../Toast/Context";
 
 const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
 function ToastPlayground() {
+
+  const sendNotification  = useToastStore((state) => state.sendNotification);
+
   return (
     <div className={styles.wrapper}>
       <header>
@@ -52,7 +56,7 @@ function ToastPlayground() {
           <div
             className={`${styles.inputWrapper} ${styles.radioWrapper}`}
           >
-            <Button>Pop Toast!</Button>
+            <Button onClick={() => sendNotification('warning', 'Triggered   ->'+Date.now())}>Pop Toast!</Button>
           </div>
         </div>
       </div>

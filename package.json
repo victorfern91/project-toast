@@ -4,6 +4,7 @@
   "private": true,
   "author": "Josh Comeau <me@joshwcomeau.com>",
   "dependencies": {
+    "@radix-ui/react-toast": "^1.1.5",
     "eslint": "^8.49.0",
     "eslint-config-react-app": "^7.0.1",
     "new-component": "5.0.2",
@@ -14,7 +15,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "2.0.10",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "zustand": "^4.4.7"
   },
   "scripts": {
     "predev": "rimraf .parcel-cache dist",
